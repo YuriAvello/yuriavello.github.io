@@ -206,6 +206,17 @@ Rather than manually pushing every time you write, a PowerShell script run by Wi
 Create the script at `D:\Blog\autopublish.ps1`:
 
 ```powershell
+# Copy blog posts from Obsidian to Quartz content folder
+$source = "D:\Obsidian Vault\Yuri\07. Blog"
+$destination = "D:\Blog\quartz\content"
+
+# Remove old content folder completely and recreate it
+Remove-Item -Path $destination -Recurse -Force -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Path $destination -Force
+
+Copy-Item -Path "$source\*" -Destination $destination -Recurse -Force
+
+# Push to GitHub
 Set-Location "D:\Blog\quartz"
 
 $status = git status --porcelain
