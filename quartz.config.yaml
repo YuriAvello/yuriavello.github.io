@@ -217,9 +217,9 @@ plugins:
     enabled: true
     options:
       links:
-      GitHub: https://github.com/YuriAvello
-      LinkedIn: https://www.linkedin.com/in/yuriavello
-      Tags: https://yuriavello.github.io/tags
+        GitHub: https://github.com/YuriAvello
+        LinkedIn: https://www.linkedin.com/in/yuriavello
+        Tags: https://yuriavello.github.io/tags
   - source: github:quartz-community/recent-notes
     enabled: true
     options:
