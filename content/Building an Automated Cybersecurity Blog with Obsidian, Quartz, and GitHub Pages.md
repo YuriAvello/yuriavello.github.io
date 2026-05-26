@@ -4,9 +4,7 @@ date: 2026-05-26
 tags:
   - homelab
   - obsidian
-  - quartz
   - github
-  - blogging
   - automation
 draft: false
 ---
