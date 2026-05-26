@@ -223,10 +223,11 @@ plugins:
   - source: github:quartz-community/recent-notes
     enabled: true
     options:
-      title: Recent Notes
+      title: Fresh Intel
       limit: 5
       linkToMore: false
       showTags: false
+      hideTagPages: true
     layout:
       position: left
       priority: 25
