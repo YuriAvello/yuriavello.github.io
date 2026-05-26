@@ -296,6 +296,59 @@ After fixing the symlink, test the publish script manually:
 If everything is working you should see it detect changes, commit, and push to GitHub. The Actions tab on your GitHub repo should then show a new deployment running.
 
 
+---
+
+## Giscus Comments Setup
+
+### Problem
+
+Blog was showing: **"An error occurred: giscus is not installed on this repository"**
+
+### Steps to fix
+
+**1. Enable GitHub Discussions**
+
+- Went to `yuriavello.github.io` repo → Settings → Features → ticked **Discussions**
+- Clicked **Set up discussions** to initialise it
+
+**2. Install Giscus app**
+
+- Went to [github.com/apps/giscus](https://github.com/apps/giscus)
+- Installed it on `YuriAvello/yuriavello.github.io` repo only
+
+**3. Generate config at giscus.app**
+
+- Entered `YuriAvello/yuriavello.github.io` as the repository
+- Selected **Announcements** as the discussion category
+- Got the repo ID and category ID from the generated script
+
+**4. Updated `quartz.config.yaml`** Found the comments plugin section and replaced the TODO placeholders:
+
+```yaml
+- source: github:quartz-community/comments
+  enabled: true
+  options:
+    provider: giscus
+    options:
+      repo: YuriAvello/yuriavello.github.io
+      repoId: R_kgDOSn5cCQ
+      category: Announcements
+      categoryId: DIC_kwDOSn5cCc4C92vp
+      mapping: pathname
+      strict: false
+      reactionsEnabled: true
+      inputPosition: bottom
+```
+
+**5. Pushed to GitHub**
+
+```powershell
+& "D:\Blog\autopublish.ps1"
+```
+
+---
+
+
 ## What's Next
 
 This is just the foundation. Future posts will cover:
