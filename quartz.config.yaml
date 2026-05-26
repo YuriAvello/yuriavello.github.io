@@ -226,7 +226,7 @@ plugins:
       title: Recent Notes
       limit: 5
       linkToMore: false
-      showTags: true
+      showTags: false
     layout:
       position: left
       priority: 25
