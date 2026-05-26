@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - tags
   theme:
     defaultColorScheme: dark
     fontOrigin: googleFonts
