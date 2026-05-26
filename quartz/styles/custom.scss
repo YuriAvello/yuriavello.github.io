@@ -1,3 +1,31 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Clean up sidebar
+.left {
+  gap: 0.5rem;
+}
+
+// Make recent notes cleaner
+.recent-notes {
+  a {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  // Hide tag list under recent notes
+  ul ul {
+    display: none;
+  }
+}
+
+// Tidy explorer
+.explorer {
+  font-size: 0.85rem;
+}
+
+// Make graph view smaller
+.graph {
+  height: 200px;
+}
