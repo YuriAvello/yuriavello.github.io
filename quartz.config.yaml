@@ -199,12 +199,12 @@ plugins:
     options:
       provider: giscus
       options:
-        repo: TODO:username/repo-name
-        repoId: TODO:your-repo-id
+        repo: YuriAvello/yuriavello.github.io
+        repoId: R_kgDOSn5cCQ
         category: Announcements
-        categoryId: TODO:your-category-id
-        mapping: url
-        strict: true
+        categoryId: DIC_kwDOSn5cCc4C92vp
+        mapping: pathname
+        strict: false
         reactionsEnabled: true
         inputPosition: bottom
         lightTheme: light

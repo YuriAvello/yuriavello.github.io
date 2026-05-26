@@ -259,6 +259,43 @@ Live at yourusername.github.io within minutes
 
 ---
 
+---
+
+## Troubleshooting — Symlink Not Working on Windows
+
+After setting up the symlink, I noticed the `D:\Blog\quartz\content` folder was showing as regular files instead of an actual symlink, meaning changes in Obsidian were not being picked up by Quartz automatically.
+
+### The Fix
+
+Open **PowerShell as Administrator** and run:
+
+```powershell
+Remove-Item "D:\Blog\quartz\content" -Recurse -Force
+
+New-Item -ItemType SymbolicLink -Path "D:\Blog\quartz\content" -Target "D:\Obsidian Vault\Yuri\07. Blog"
+```
+
+Verify it worked with:
+
+```powershell
+Get-Item "D:\Blog\quartz\content" | Select-Object Name, LinkType, Target
+```
+
+You should see `LinkType: SymbolicLink` pointing to your Obsidian blog folder.
+
+> ⚠️ **Warning:** The `Remove-Item` command will delete the `content` folder including any files inside it. If your `index.md` lives inside `D:\Blog\quartz\content` rather than directly in your Obsidian folder, it will be deleted and your website will break. Before running this, make sure your `index.md` is saved inside your Obsidian `07. Blog` folder, not just inside the Quartz content folder.
+
+### Testing Auto-Publish
+
+After fixing the symlink, test the publish script manually:
+
+```powershell
+& "D:\Blog\autopublish.ps1"
+```
+
+If everything is working you should see it detect changes, commit, and push to GitHub. The Actions tab on your GitHub repo should then show a new deployment running.
+
+
 ## What's Next
 
 This is just the foundation. Future posts will cover:
