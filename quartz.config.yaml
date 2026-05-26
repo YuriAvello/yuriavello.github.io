@@ -12,7 +12,6 @@ configuration:
     - private
     - templates
     - .obsidian
-    - tags
   theme:
     defaultColorScheme: dark
     fontOrigin: googleFonts
@@ -228,6 +227,8 @@ plugins:
       limit: 5
       linkToMore: false
       showTags: false
+      filter:
+        - "tags/**"
     layout:
       position: left
       priority: 25
