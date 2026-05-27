@@ -6,7 +6,6 @@ tags:
   - "#CyberSecurity"
   - "#CareerChange"
   - "#LifelongLearning"
-  - "#ArtisanPins"
   - "#GenerativeAI"
   - "#SOC_Analyst"
   - "#InfoSec"
