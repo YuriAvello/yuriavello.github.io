@@ -3,6 +3,13 @@ title: "From books to AI: how (my) learning evolved"
 date: 2026-05-27
 draft: true
 tags:
+  - "#CyberSecurity"
+  - "#CareerChange"
+  - "#LifelongLearning"
+  - "#ArtisanPins"
+  - "#GenerativeAI"
+  - "#SOC_Analyst"
+  - "#InfoSec"
 ---
 A little introduction about myself: I was born in Italy in the 80s and when I was around thirteen years old my parents enrolled me for some IT courses. At that time I started with BASIC, to then pass to DBIII Plus, then C, to end with pc building course. 
 
