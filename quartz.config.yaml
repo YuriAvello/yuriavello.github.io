@@ -4,11 +4,10 @@ configuration:
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
-  analytics: {
-    provider: "umami",
-    host: "https://cloud.umami.is",
-    websiteId: "334c8e79-5c68-4263-b862-e9ba3732cba6",
-},
+  analytics:
+    provider: umami
+    host: "https://cloud.umami.is"
+    websiteId: "334c8e79-5c68-4263-b862-e9ba3732cba6"
   locale: en-US
   baseUrl: yuriavello.github.io
   ignorePatterns:
