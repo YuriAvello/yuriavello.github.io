@@ -1,7 +1,7 @@
 ---
 title: "From books to AI: how (my) learning evolved"
 date: 2026-05-27
-draft: true
+draft: false
 tags:
   - "#CyberSecurity"
   - "#CareerChange"
