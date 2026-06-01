@@ -34,3 +34,9 @@
 .explorer ul li {
   margin-bottom: 0.4rem;
 }
+
+@media (max-width: 768px) {
+  .recent-notes {
+    display: none;
+  }
+}
