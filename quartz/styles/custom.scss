@@ -47,6 +47,10 @@ td.note-properties-key.metadata-property-key {
   display: none;
 }
 
+h1[id] {
+  display: none;
+}
+
 
 @media (max-width: 768px) {
   .recent-notes {
