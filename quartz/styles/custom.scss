@@ -35,6 +35,14 @@
   margin-bottom: 0.4rem;
 }
 
+/* Fix tags to stay on one line */
+.note-properties .note-properties-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .recent-notes {
     display: none;
