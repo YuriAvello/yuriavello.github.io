@@ -38,10 +38,15 @@
 /* Fix tags to stay on one line */
 .note-properties .note-properties-tags {
   display: flex;
-  flex-wrap: nowrap;
+  text-wrap: unset;
   overflow-x: auto;
   white-space: nowrap;
 }
+
+.note-properties-key metadata-property-key{
+display: none;
+  }
+
 
 @media (max-width: 768px) {
   .recent-notes {
