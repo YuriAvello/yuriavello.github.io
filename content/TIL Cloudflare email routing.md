@@ -1,7 +1,7 @@
 ---
 title: TIL Cloudflare email routing
-date:
-draft: true
+date: 2026-06-05
+draft: false
 tags:
   - cloudflare
   - homelab
@@ -15,7 +15,9 @@ tags:
 
 # TIL Cloudflare Routing Blew My Mind
 
-Not sure if I mentioned before, but I am planning to install n8n on my Proxmox server. The reason is that I want to automate the creation of my Etsy listings. The idea is simple: I prepare the content for each listing in a Google Sheet, and n8n — running quietly at home on my Proxmox — takes care of publishing one listing per day on Etsy while I focus on other things, or just live my life.
+If you have read my previous article about [[TIL Proxmox VE Helper Script]], you know that I am planning to install on my proxmox server the N8N community version to learn and create my own automation. 
+
+The reason is that I want to automate the creation of my Etsy listings. The idea is simple: I prepare the content for each listing in a Google Sheet, and n8n — running quietly at home on my Proxmox — takes care of publishing one listing per day on Etsy while I focus on other things, or just live my life.
 
 To make this work, n8n needs to be reachable from the internet. Etsy's API needs to be able to talk back to it, and if n8n is just sitting on my local network, that is not going to happen.
 
@@ -29,7 +31,7 @@ Turns out they solve very different problems. Tailscale creates a private networ
 
 Cloudflare Tunnel is a different thing. You install a small agent on your server, it dials out to Cloudflare's infrastructure, and from that moment your server has a real public URL. No ports to open on your router, no exposing your home IP. And because you need a domain to set this up, I decided to just buy one directly from Cloudflare. They sell domains at wholesale price — no markup — and DNS is managed automatically. Easy decision.
 
-So I bought `grisofandango.com`. Done.
+So I bought one. Done.
 
 ### Wait, now I have a domain name...
 
@@ -39,21 +41,21 @@ Once you own a domain, you start asking yourself: what else can I do with this? 
 
 But then: what about email with my own domain?
 
-I asked, and the answer was Cloudflare Email Routing. You can create email addresses on your domain and forward them to any inbox you already have. So `mapscape@grisofandango.com`, `libatio@grisofandango.com`, `studio@grisofandango.com` — all landing in my one Gmail. For free.
+I asked, and the answer was Cloudflare Email Routing. You can create email addresses on your domain and forward them to any inbox you already have. So `hello@yourdomain.com`, `sales@yourdomain.com`, `customerservice@yourdomain.com` — all landing in my one Gmail. For free.
 
 And then you enable the catch-all.
 
 ### The catch-all is where my brain exploded a little
 
-The catch-all means that _any_ address @grisofandango.com, even ones you never created, get forwarded to your Gmail.
+The catch-all means that _any_ address @yourdomain.com, even ones you never created, get forwarded to your Gmail.
 
-Let me explain why this matters for me. I have multiple Etsy shops. Each shop needs a unique email address. Until now I have been creating separate Google accounts for each one — separate Gmail, separate Google Drive, separate everything. It is a mess to manage and it just keeps growing.
+Let me explain why this matters for me. I have two Etsy shops, and planning to open a third one. Each shop needs a unique email address. Until now I have been creating separate Google accounts for each one — separate Gmail, separate Google Drive, separate everything. It is a mess to manage and it just keeps growing.
 
-With the catch-all? I go to Etsy, I type `randomstickers@grisofandango.com`, I sign up. The verification email lands in my Gmail. Done. No new Google account. No switching between inboxes. No mess.
+With the catch-all? I go to Etsy, I type `randomstickers@yourdomain.com`, I sign up. The verification email lands in my Gmail. Done. No new Google account. No switching between inboxes. No mess.
 
 Same for Instagram, TikTok, Facebook — each brand gets its own address, all landing in one place. Each service sees a different, real email address. I see one inbox.
 
-And when I want to _reply_ from one of those addresses, Gmail has a "Send As" feature. You add the address, Gmail sends a verification to it, it arrives in your inbox via Cloudflare routing, you confirm. From that moment, when a customer emails `mapscape@grisofandango.com` and I reply, they see `mapscape@grisofandango.com`. They have no idea it is all the same person, in the same inbox.
+And when I want to _reply_ from one of those addresses, Gmail has a "Send As" feature. You add the address, Gmail sends a verification to it, it arrives in your inbox via Cloudflare routing, you confirm. From that moment, when a customer emails `hello@yourdomain.com` and I reply, they see `hello@yourdomain.com` They have no idea it is all the same person, in the same inbox.
 
 ### The cost of all of this
 
@@ -69,4 +71,3 @@ Today I learned.
 
 ---
 
-_Now I just need to verify that `grisofandango.com` is actually available. The whole plan falls apart if it is not._
